@@ -1,9 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import usersRoutes from './routes/users.js'
+import process from 'dotenv';
 
 // Constants
-const PORT = 5000
+
+const configs =  process.config().parsed
+
+const PORT = configs['PORT']
 
 const app = express();
 

@@ -1,20 +1,15 @@
 import mysql from "mysql";
+import process from "dotenv";
+
+const configs =  process.config().parsed
 
 const connectionDetails = {
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "nikhil_dev",
+  host: configs['HOST'],
+  user: configs['USER'],
+  password: configs['PASSWORD'],
+  database: configs['DB_NAME'],
 };
 
-let users = [
-  {
-    firstName: "nikhil",
-    lastName: "mandlik",
-    age: 23,
-    id: "24",
-  },
-];
 
 export const getUsers = (req, res) => {
   var conn = mysql.createConnection(connectionDetails);
