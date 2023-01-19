@@ -4,7 +4,6 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
-      - npm install -g typescript
       - npm install
   pre_build:
     commands:
@@ -12,8 +11,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - tsc
-      - npm prune --production
     post_build:
       commands:
         - echo Build completed on `date`  
