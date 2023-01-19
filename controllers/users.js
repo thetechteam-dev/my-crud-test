@@ -7,7 +7,7 @@ const connectionDetails = {
   host: "68.178.145.28",
   user: "rawhit",
   password: "_p)4jU&ziQPT",
-  database: configs['DB_NAME'],
+  database: "api_user",
 };
 
 
