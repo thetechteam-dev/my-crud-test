@@ -24,3 +24,4 @@ artifacts:
     - app.js
     - "controllers/**/*"
     - "routes/**/*"
+    - "node_modules/**/*"

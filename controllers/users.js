@@ -4,9 +4,9 @@ import process from "dotenv";
 const configs =  process.config().parsed
 
 const connectionDetails = {
-  host: configs['HOST'],
-  user: configs['USER'],
-  password: configs['PASSWORD'],
+  host: "68.178.145.28",
+  user: "rawhit",
+  password: "_p)4jU&ziQPT",
   database: configs['DB_NAME'],
 };
 
