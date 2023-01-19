@@ -21,3 +21,4 @@ artifacts:
     - package-lock.json
     - "build/**/*"
     - .ebextensions/**/*
+    - app.js
