@@ -15,10 +15,4 @@ phases:
       commands:
         - echo Build completed on `date`  
 artifacts:
-  type: zip -r deploy.zip * -x ./node_modules
-  files:
-    - package.json
-    - package-lock.json
-    - "build/**/*"
-    - .ebextensions/**/*
-    - app.js
+  type: zip -r deploy.zip *
