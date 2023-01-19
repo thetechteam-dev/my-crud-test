@@ -16,3 +16,11 @@ phases:
         - echo Build completed on `date`  
 artifacts:
   type: zip -r deploy.zip *
+  files:
+    - package.json
+    - package-lock.json
+    - "build/**/*"
+    - .ebextensions/**/*
+    - app.js
+    - "controllers/**/*"
+    - "routes/**/*"
