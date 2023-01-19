@@ -7,7 +7,7 @@ const connectionDetails = {
   host: "68.178.145.28",
   user: "rawhit",
   password: "_p)4jU&ziQPT",
-  database: "api_user",
+  database: "my-blog",
 };
 
 
@@ -17,7 +17,7 @@ export const getUsers = (req, res) => {
     if (err) {
       res.status(500).send(`database connection failed with err ${err}`);
     } else {
-      conn.query("select * from user", (err, result) => {
+      conn.query("select * from api_user", (err, result) => {
         res.send(result);
       });
     }
@@ -33,7 +33,7 @@ export const createUser = (req, res) => {
     } else {
       const { userId, name, age } = req.body;
       if (userId != undefined && name != undefined && age != undefined) {
-        var sql = `INSERT INTO user (userId, name, age) VALUES ('${userId}', '${name}', '${age}')`;
+        var sql = `INSERT INTO api_user (userId, name, age) VALUES ('${userId}', '${name}', '${age}')`;
         conn.query(sql, function (err, result) {
             if (err) {
                 res.send(`Insertion failed with error ${err}`)
@@ -58,7 +58,7 @@ export const getUserById = (req, res) => {
     if (err) {
       res.status(500).send(`database connection failed with err ${err}`);
     } else {
-      conn.query("select * from user", (err, result) => {
+      conn.query("select * from api_user", (err, result) => {
         if (err) {
             res.status(500).send(`select operation failed with error ${err}`);
         } else {
@@ -82,7 +82,7 @@ export const deleteUserById = (req, res) => {
       if (err) {
         res.status(500).send(`database connection failed with err ${err}`);
       } else {
-        var sql = `DELETE FROM user WHERE userId = '${id}'`;
+        var sql = `DELETE FROM api_user WHERE userId = '${id}'`;
         conn.query(sql, function (err, result) {
             if (err) {
                 res.send(`Deletion failed with error ${err}`)
@@ -103,7 +103,7 @@ export const updateUserById = (req, res) => {
       } else {
         const { userId, name, age } = req.body;
         if (userId != undefined && name != undefined && age != undefined) {
-          var sql = `UPDATE user SET userId = '${userId}', name = '${name}', age = '${age}' WHERE userId='${userId}'`;
+          var sql = `UPDATE api_user SET userId = '${userId}', name = '${name}', age = '${age}' WHERE userId='${userId}'`;
           conn.query(sql, function (err, result) {
               if (err) {
                   res.send(`Update operation failed with error ${err}`)
