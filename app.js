@@ -7,7 +7,7 @@ import process from 'dotenv';
 
 const configs =  process.config().parsed
 
-const PORT = configs['PORT']
+const PORT = "8080"
 
 const app = express();
 
